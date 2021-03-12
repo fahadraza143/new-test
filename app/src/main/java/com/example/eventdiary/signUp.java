@@ -13,6 +13,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -82,11 +83,14 @@ public class signUp extends AppCompatActivity {
         }
     }
 
-    private void sinUpuser(String fn, String ln1, String cn, String email, String pas) {
+    private void sinUpuser(final String fn, final String ln1, final String cn, final String email, final String pas) {
         auth.createUserWithEmailAndPassword(email,pas).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    String key=auth.getCurrentUser().getUid();
+                    userId user=new userId(fn,ln1,cn,email,pas);
+                    ref.child(key).setValue(user);
 
                     Intent intent = new Intent(signUp.this,Home.class);
                     startActivity(intent);

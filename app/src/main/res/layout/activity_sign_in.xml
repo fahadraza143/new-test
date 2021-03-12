@@ -53,12 +53,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
+        android:drawableStart="@drawable/em2"
         android:ems="10"
         android:hint="Email"
+        android:drawablePadding="8dp"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.075"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo2"
         app:layout_constraintWidth_percent="0.8" />
@@ -73,6 +75,8 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
+        android:drawableStart="@drawable/em"
+        android:drawablePadding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.075"
         app:layout_constraintHorizontal_bias="0.507"
@@ -132,6 +136,10 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
