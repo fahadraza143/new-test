@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.400"
-        app:srcCompat="@drawable/event" />
+        app:srcCompat="@drawable/event"  />
 
     <ImageView
         android:id="@+id/well"

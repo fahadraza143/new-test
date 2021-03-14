@@ -34,6 +34,7 @@ public class signIn extends AppCompatActivity {
         getInfo();
 
 
+
     }
 
     public void init() {
@@ -64,7 +65,7 @@ public class signIn extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Intent intent1 = new Intent(signIn.this,home1.class);
                     startActivity(intent1);
-                } else {
+                } else  {
                     Toast.makeText(signIn.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -85,5 +86,5 @@ public class signIn extends AppCompatActivity {
         Intent intent3 = new Intent(signIn.this,Forget.class);
         startActivity(intent3);
 
-    }
+     }
 }

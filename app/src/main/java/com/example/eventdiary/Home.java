@@ -26,5 +26,6 @@ public class Home extends AppCompatActivity {
         auth.signOut();
         Intent intent = new Intent(Home.this,signIn.class);
         startActivity(intent);
+
     }
 }

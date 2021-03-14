@@ -54,7 +54,7 @@ public class signUp extends AppCompatActivity {
 
 
 
-    public void signUp(View view) {
+    public void signUp(View view){
         String fn=fnEt.getText().toString();
         String ln1=lnEt.getText().toString();
         String cn=cnEt.getText().toString();
@@ -92,10 +92,10 @@ public class signUp extends AppCompatActivity {
                     userId user=new userId(fn,ln1,cn,email,pas);
                     ref.child(key).setValue(user);
 
-                    Intent intent = new Intent(signUp.this,Home.class);
+                    Intent intent = new Intent(signUp.this,home1.class);
                     startActivity(intent);
                 }else
-                    Toast.makeText(signUp.this,task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(signUp.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
             }
         });
     }
