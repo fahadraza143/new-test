@@ -74,7 +74,7 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:drawableStart="@drawable/em"
         android:drawablePadding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,7 +135,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        android:onClick="forget"/>
 
 
 

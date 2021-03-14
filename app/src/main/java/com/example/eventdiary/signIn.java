@@ -62,7 +62,7 @@ public class signIn extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Intent intent1 = new Intent(signIn.this,Home.class);
+                    Intent intent1 = new Intent(signIn.this,home1.class);
                     startActivity(intent1);
                 } else {
                     Toast.makeText(signIn.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -79,5 +79,11 @@ public class signIn extends AppCompatActivity {
     public void signUp(View view) {
         Intent intent2 = new Intent(signIn.this,signUp.class);
         startActivity(intent2);
+    }
+
+    public void forget(View view) {
+        Intent intent3 = new Intent(signIn.this,Forget.class);
+        startActivity(intent3);
+
     }
 }
