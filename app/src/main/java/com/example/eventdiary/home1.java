@@ -1,6 +1,7 @@
 package com.example.eventdiary;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,8 +12,8 @@ import java.util.List;
 
 public class home1 extends AppCompatActivity {
 
-    private String[] name = { "Holy Occassions's","Holydays","Wedding","Anniversary","Educational","Birthday"};
-    private  int [] pic={R.drawable.em ,R.drawable.em ,R.drawable.em ,R.drawable.em ,R.drawable.em ,R.drawable.em};
+    private String[] name = { "Holy Occassions's","Holidays","Wedding","Anniversary","Educational","Birthday"};
+    private  int [] pic={R.drawable.event ,R.drawable.event ,R.drawable.event ,R.drawable.event ,R.drawable.event ,R.drawable.event};
     private List<events> eventsList=new ArrayList<>();
     private RecyclerView recyclerView;
 
@@ -21,10 +22,16 @@ public class home1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home1);
         recyclerView=findViewById(R.id.r);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         prepairethelist();
         recyclerAdapter adapter =new recyclerAdapter(eventsList);
+
+        GridLayoutManager layoutManager = new GridLayoutManager(home1.this,2);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+
 
     }
   private void prepairethelist(){

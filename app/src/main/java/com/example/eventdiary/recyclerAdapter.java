@@ -28,6 +28,13 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.eventv
         events event=eventsList.get(position);
         holder.tex.setText(event.getTex());
         holder.pic.setImageResource(event.getPic());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override
