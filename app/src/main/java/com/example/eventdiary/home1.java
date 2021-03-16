@@ -12,8 +12,8 @@ import java.util.List;
 
 public class home1 extends AppCompatActivity {
 
-    private String[] name = { "Holy Occassions's","Holidays","Wedding","Anniversary","Educational","Birthday"};
-    private  int [] pic={R.drawable.event ,R.drawable.event ,R.drawable.event ,R.drawable.event ,R.drawable.event ,R.drawable.event};
+    private String[] name = { "Holy Occassions","Holidays","Wedding","Anniversary","Educational","Birthday"};
+    private  int [] pic={R.drawable.holy ,R.drawable.holidays ,R.drawable.wedding ,R.drawable.ani ,R.drawable.edu ,R.drawable.birth};
     private List<events> eventsList=new ArrayList<>();
     private RecyclerView recyclerView;
 

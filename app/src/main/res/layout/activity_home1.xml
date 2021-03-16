@@ -7,8 +7,29 @@
     tools:context=".home1">
 
     <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/r"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         android:scrollbars="vertical"/>
+        android:id="@+id/r"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.75"
+        app:layout_constraintWidth_percent=".99"
+
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="108dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/r"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/event" />
 </androidx.constraintlayout.widget.ConstraintLayout>
