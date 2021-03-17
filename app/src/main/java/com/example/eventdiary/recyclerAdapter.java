@@ -1,5 +1,6 @@
 package com.example.eventdiary;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,8 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.eventv
             @Override
             public void onClick(View v) {
 
+
+
             }
         });
     }
@@ -50,6 +53,9 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.eventv
         tex=itemView.findViewById(R.id.wedTv);
         pic=itemView.findViewById(R.id.pic);
         }
+    }
+    public interface OnNoteListener{
+        void onNoteClick(int position);
     }
 }
 

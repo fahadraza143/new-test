@@ -4,45 +4,47 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class onclickList extends AppCompatActivity {
 
-    AutoCompleteTextView autoCompleteTextView;
-
+    TextView tv;
     TextView tvTimer;
     int t1Hour,t1Minute;
     EditText et;
     DatePickerDialog.OnDateSetListener lisner;
+
+    Spinner sp_parent,sp_child;
+    ArrayList<String> arrayList_parent;
+    ArrayAdapter<String> arrayAdapter_parent;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_onclick_list);
-        autoCompleteTextView= findViewById(R.id.autoCompleteText);
-
-        String [] item= {"Brunch","Lunch","Dinner"};
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.menu_item,item);
-        //'''''''''''''''''''to make defult value'''''''//
-        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString(),false);
-        autoCompleteTextView.setAdapter(arrayAdapter);
 
 
 
         setContentView(R.layout.activity_onclick_list);
 
+
+        setContentView(R.layout.activity_onclick_list);
         et=findViewById(R.id.edit_text);
         tvTimer=findViewById(R.id.tv_timer);
 
@@ -51,7 +53,6 @@ public class onclickList extends AppCompatActivity {
         final int year=c.get(Calendar.YEAR);
         final int month=c.get(Calendar.MONTH);
         final int day=c.get(Calendar.DAY_OF_MONTH);
-
 
         //';;;;;;;;'''''''''''timer''''''''''''';;;;;;;;;;//
 
@@ -106,6 +107,31 @@ public class onclickList extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
+        sp_parent=(Spinner)findViewById(R.id.sp_parent);
+
+        arrayList_parent = new ArrayList<>();
+        arrayList_parent.add("Bruch");
+        arrayList_parent.add("Lunch");
+        arrayList_parent.add("Dinner");
+
+        arrayAdapter_parent=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_spinner_item,arrayList_parent);
+        sp_parent.setAdapter(arrayAdapter_parent);
+
+        sp_child=(Spinner)findViewById(R.id.sp_child);
+        arrayList_parent = new ArrayList<>();
+        arrayList_parent.add("YES");
+        arrayList_parent.add("MAY BE");
+
+        arrayAdapter_parent=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_spinner_item,arrayList_parent);
+        sp_child.setAdapter(arrayAdapter_parent);
+
+    }
+
+
+    public void Subscribe(View view) {
+        Intent intent2 = new Intent(onclickList.this,end.class);
+        startActivity(intent2);
 
     }
 }

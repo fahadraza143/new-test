@@ -25,4 +25,10 @@ public class Forget extends AppCompatActivity {
         Intent intent = new Intent(Forget.this,Home.class);
         startActivity(intent);
     }
-}
+
+    public void email(View view) {
+        Intent intent = new Intent(Forget.this,forgetpas.class);
+        startActivity(intent);
+    }
+
+    }

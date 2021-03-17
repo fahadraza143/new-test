@@ -28,4 +28,14 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void home(View view) {
+        Intent intent = new Intent(Home.this,onclickList.class);
+        startActivity(intent);
+    }
+
+    public void mainpage(View view) {
+        Intent intent = new Intent(Home.this,home1.class);
+        startActivity(intent);
+    }
 }

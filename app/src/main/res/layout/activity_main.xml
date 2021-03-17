@@ -11,14 +11,13 @@
         android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.400"
-        app:srcCompat="@drawable/event"  />
+        app:srcCompat="@drawable/event" />
 
     <ImageView
         android:id="@+id/well"
