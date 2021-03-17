@@ -9,6 +9,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,7 +20,8 @@ import java.util.Calendar;
 
 public class onclickList extends AppCompatActivity {
 
-    TextView tv;
+    AutoCompleteTextView autoCompleteTextView;
+
     TextView tvTimer;
     int t1Hour,t1Minute;
     EditText et;
@@ -26,8 +29,20 @@ public class onclickList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_onclick_list);
-        tv=findViewById(R.id.text_view);
+        autoCompleteTextView= findViewById(R.id.autoCompleteText);
+
+        String [] item= {"Brunch","Lunch","Dinner"};
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.menu_item,item);
+        //'''''''''''''''''''to make defult value'''''''//
+        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString(),false);
+        autoCompleteTextView.setAdapter(arrayAdapter);
+
+
+
+        setContentView(R.layout.activity_onclick_list);
+
         et=findViewById(R.id.edit_text);
         tvTimer=findViewById(R.id.tv_timer);
 
@@ -71,27 +86,7 @@ public class onclickList extends AppCompatActivity {
         });
 
 
-        //'''''''''''''''for text view'''''''''''''''''//
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
 
-
-            public void onClick(View view) {
-                DatePickerDialog datePickerDialog=new DatePickerDialog(onclickList.this,android.R.style.Theme_Holo_Dialog_MinWidth,lisner,year,month,day);
-                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                datePickerDialog.show();
-            }
-        });
-
-        lisner=new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
-
-                month = month + 1;
-                String date = dayOfMonth +"/" + month+"/"+year;
-                tv.setText(date);
-            }
-        };
 
         //'''''''''''''''''''''for edit text'''''''''''''''''''''//
 
