@@ -30,7 +30,7 @@ public class home1 extends AppCompatActivity {
         recyclerView=findViewById(R.id.r);
 
         prepairethelist();
-        recyclerAdapter adapter =new recyclerAdapter(eventsList);
+        recyclerAdapter adapter =new recyclerAdapter(eventsList,home1.this);
 
         GridLayoutManager layoutManager = new GridLayoutManager(home1.this,2);
         layoutManager.setOrientation(RecyclerView.VERTICAL);

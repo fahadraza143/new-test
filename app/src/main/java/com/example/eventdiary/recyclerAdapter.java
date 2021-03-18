@@ -1,5 +1,6 @@
 package com.example.eventdiary;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +16,13 @@ import java.util.List;
 public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.eventviewHolder> {
 
     private List<events>eventsList;
-    public recyclerAdapter(List<events>eventsList){ this.eventsList = eventsList;
+    Context context;
+
+    public recyclerAdapter(List<events> eventsList, Context context) {
+        this.eventsList = eventsList;
+        this.context = context;
     }
+
     @NonNull
     @Override
     public eventviewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -25,14 +31,18 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.eventv
     }
 
     @Override
-    public void onBindViewHolder(@NonNull eventviewHolder holder, int position) {
-        events event=eventsList.get(position);
+    public void onBindViewHolder(@NonNull eventviewHolder holder, final int position) {
+        final events event=eventsList.get(position);
         holder.tex.setText(event.getTex());
         holder.pic.setImageResource(event.getPic());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent1=new Intent(context,onclickList.class);
+                intent1.putExtra("name",eventsList.get(position).getTex());
+                intent1.putExtra("image",eventsList.get(position).getPic());
+                context.startActivity(intent1);
 
 
 
