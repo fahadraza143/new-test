@@ -110,14 +110,14 @@
             android:layout_height="wrap_content"
 
             android:background="#80137492"
-            android:text="SUBMIT"
+            android:text="Booking"
             android:layout_marginTop="17dp"
         android:textColor="#0D6B5C"
         android:textColorHighlight="#E11D5550"
         android:textColorHint="#FC13D185"
         android:textSize="25sp"
         android:textStyle="bold"
-            android:onClick="Subscribe"/>
+            android:onClick="Booking"/>
 
 
     </LinearLayout>

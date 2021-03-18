@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -111,7 +112,7 @@ public class onclickList extends AppCompatActivity {
         sp_parent=(Spinner)findViewById(R.id.sp_parent);
 
         arrayList_parent = new ArrayList<>();
-        arrayList_parent.add("Bruch");
+        arrayList_parent.add("Brunch");
         arrayList_parent.add("Lunch");
         arrayList_parent.add("Dinner");
 
@@ -129,9 +130,12 @@ public class onclickList extends AppCompatActivity {
     }
 
 
-    public void Subscribe(View view) {
+
+
+    public void Booking(View view) {
         Intent intent2 = new Intent(onclickList.this,end.class);
         startActivity(intent2);
+        Toast.makeText(onclickList.this,"Your event has been booked",Toast.LENGTH_LONG).show();
 
     }
 }
